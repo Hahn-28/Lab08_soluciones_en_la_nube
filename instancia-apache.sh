@@ -6,13 +6,13 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Instalar Apache, UFW y Curl
-sudo apt install -y apache2 ufw curl
+sudo apt install -y apache2 ufw curl git
 
 # Habilitar Apache en el arranque
 sudo systemctl enable apache2
 sudo systemctl start apache2
 
-# Nombre del dominio (será apuntado por el profesor)
+# Nombre del dominio (ajustar según tu grupo)
 DOMINIO="g27.castro.asesoresti.net"
 
 # Crear estructura de directorios
@@ -34,14 +34,14 @@ cat <<EOF | sudo tee /var/www/$DOMINIO/public_html/index.html
     </style>
 </head>
 <body>
-    <h1>Bienvenido a Widget Inc. Castro Hector :)</h1>
+    <h1>Bienvenido a Widget Inc. Castro Hector</h1>
     <p>Servidor configurado automáticamente en Amazon EC2.</p>
     <p>Dominio: $DOMINIO</p>
 </body>
 </html>
 EOF
 
-# Configurar VirtualHost de Apache con restricción de acceso
+# Configurar VirtualHost sin restricción de IP
 sudo bash -c "cat > /etc/apache2/sites-available/$DOMINIO.conf" <<EOL
 <VirtualHost *:80>
     ServerAdmin admin@$DOMINIO
