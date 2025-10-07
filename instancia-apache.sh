@@ -51,8 +51,7 @@ sudo bash -c "cat > /etc/apache2/sites-available/$DOMINIO.conf" <<EOL
     <Directory /var/www/$DOMINIO/public_html>
         Options Indexes FollowSymLinks
         AllowOverride None
-        Require ip 45.236.45.0/24
-        Require local
+        Require all granted
     </Directory>
 
     ErrorLog \${APACHE_LOG_DIR}/error.log
