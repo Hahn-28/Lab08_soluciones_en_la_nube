@@ -34,7 +34,7 @@ cat <<EOF | sudo tee /var/www/$DOMINIO/public_html/index.html
     </style>
 </head>
 <body>
-    <h1>Bienvenido a Widget Inc.</h1>
+    <h1>Bienvenido a Widget Inc. Castro Hector :)</h1>
     <p>Servidor configurado automáticamente en Amazon EC2.</p>
     <p>Dominio: $DOMINIO</p>
 </body>
@@ -67,7 +67,8 @@ sudo systemctl reload apache2
 sudo systemctl restart apache2
 
 # Configurar firewall UFW
-sudo ufw allow from 45.236.45.0/24 to any port 80 comment "Acceso solo desde campus"
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
 sudo ufw allow ssh
 sudo ufw --force enable
 
