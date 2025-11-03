@@ -26,17 +26,32 @@ cat <<EOF | sudo tee /var/www/$DOMINIO/public_html/index.html
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Widget Inc. - $DOMINIO</title>
+    <title>Proyecto de Migración AWS - $DOMINIO</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f0f4f8; text-align: center; padding-top: 80px; }
-        h1 { color: #0073bb; }
-        p { color: #333; font-size: 18px; }
+        body { font-family: Arial, sans-serif; background-color: #f0f4f8; text-align: center; padding-top: 50px; }
+        h1 { color: #232F3E; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .service-box { background: white; margin: 15px 0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h2 { color: #FF9900; }
+        p { color: #333; font-size: 16px; line-height: 1.6; }
     </style>
 </head>
 <body>
-    <h1>Bienvenido a Widget Inc. Castro Hector</h1>
-    <p>Servidor configurado automáticamente en Amazon EC2.</p>
-    <p>Dominio: $DOMINIO</p>
+    <div class="container">
+        <h1>Proyecto de Migración a AWS</h1>
+        <div class="service-box">
+            <h2>Almacenamiento de Objetos</h2>
+            <p>Implementación de S3 para archivos estáticos</p>
+        </div>
+        <div class="service-box">
+            <h2>Redes Seguras</h2>
+            <p>Configuración de VPC y acceso seguro desde TECSUP</p>
+        </div>
+        <div class="service-box">
+            <h2>Despliegue de Servidores</h2>
+            <p>Servidor de prueba en EC2: $DOMINIO</p>
+        </div>
+    </div>
 </body>
 </html>
 EOF
